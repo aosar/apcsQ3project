@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class AnimalHospital {
 	
 	private ArrayList<Pet> pets;
+	 private static AnimalHospital hospital;
 	
 	public AnimalHospital(String inputFile){
 		//Scanner sc = new Scanner(System.in);
@@ -22,6 +23,11 @@ public class AnimalHospital {
 		 * END
 		 */
 	}
+	 public static synchronized AnimalHospital getInstance( ){
+	 	if (hospital == null)
+        		 hospital=new AnimalHospital();
+		return hospital;
+	 }
 	
 	public void categorize(ArrayList<String> petList){
 		for(int i = 0; i < petList.size(); i++){
