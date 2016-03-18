@@ -103,6 +103,4 @@ public abstract class Pet implements Boardable{
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	int gender;
-
 }
